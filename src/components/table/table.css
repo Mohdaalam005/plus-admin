@@ -1,0 +1,21 @@
+.customColumnHeader {
+    border-right: 1px solid #e0e0e0; /* Adjust the color as needed */
+    padding-right: 8px;
+  }
+  
+  .customCell {
+    border-right: 1px solid #e0e0e0; /* Adjust the color as needed */
+    padding-right: 8px;
+  }
+  
+  .customHeader {
+    background-color: green ; /* Change to the desired color */
+    color: white ; /* Change to the desired color */
+    font-weight: bold;
+   
+  }
+
+  .css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root:hover {
+    color:  white;
+  }
+
