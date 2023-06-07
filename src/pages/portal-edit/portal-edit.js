@@ -1,32 +1,36 @@
 import { Box, Button, Grid, Stack, TextField } from "@mui/material";
 import React, { useState } from "react";
-import Navbar from "../../../components/navbar/navbar";
+import Navbar from "../../components/navbar/navbar";
 
 import "./portal-edit.css";
 import {
   DropdownCredentials,
   DropdownStatus,
   DropdownType,
-} from "../../../components/dropdown/dropdown";
+} from "../../components/dropdown/dropdown";
 
-import InputText from "../../../components/input/input";
+import InputText from "../../components/input/input";
 
-const PortalEdit = () => {
-    const [portal , setPortal] = useState([])
-    
-    const addPortal = () => {
-        
-        setPortal([...portal, <InputText key={portal.length} onRemove={() => removePortal(portal.length)} />]  );
-    }
-    const removePortal = (index) => {
-        const updatedPortals = portal.filter((_, i) => i !== index);
-        setPortal(updatedPortals);
-      };
-      
-      
+function PortalEdit() {
+  const [portal, setPortal] = useState([]);
+
+  const addPortal = () => {
+    setPortal((prevPortals) => [
+      ...prevPortals,
+      { id: prevPortals.length + 1 },
+    ]);
+    console.log(portal + "set portal");
+  };
+
+  const removePortal = (id) => {
+    setPortal((prevPortals) =>
+      prevPortals.filter((portal) => portal.id !== id)
+    );
+  };
+  console.log(portal);
   return (
     <Box sx={{ position: "absolute", top: "86px", left: "50px", width: "92%" }}>
-      <Grid>
+      <Grid item>
         <Navbar />
       </Grid>
       <Stack
@@ -45,7 +49,7 @@ const PortalEdit = () => {
         </ul>
       </Stack>
 
-      <Grid>
+      <Grid item>
         <TextField size="small" label="Name" type="text" fullWidth />
       </Grid>
 
@@ -54,26 +58,40 @@ const PortalEdit = () => {
         <DropdownCredentials />
         <DropdownStatus />
       </Stack>
-      <Grid marginTop={"42px"}>
+      
+      <Grid item marginTop={"42px"}>
         <TextField size="small" label="Primary Url" type="text" fullWidth />
       </Grid>
-      <Grid marginTop={"42px"}>
+      <Grid item marginTop={"42px"}>
         <TextField size="small" label="Comment" type="text" fullWidth />
       </Grid>
       <Stack width="150px" marginTop={"42px"} direction="column">
-        <Button variant="outlined" color="primary"> Submit</Button>
+        <Button variant="outlined" color="primary">
+          Submit
+        </Button>
       </Stack>
       <Stack width="150px" marginTop={"42px"} direction="column">
-        <Button onClick={addPortal} sx={{width : '167px'}} variant="text" color="primary"> + Portal Override</Button>
+        <Button
+          onClick={addPortal}
+          sx={{ width: "167px" }}
+          variant="text"
+          color="primary"
+        >
+          + Portal Override
+        </Button>
       </Stack>
-      <Grid>
-      {portal.map((portalIndex) => (
-        <InputText key={portalIndex} onRemove={() => removePortal(portalIndex)} />
-      ))}
+      <Grid item
+      >
+        {portal.map((portal) => (
+          <InputText
+            key={portal.id}
+            portal={portal}
+            removePortal={removePortal}
+          />
+        ))}
       </Grid>
-      
     </Box>
   );
-};
+}
 
 export default PortalEdit;

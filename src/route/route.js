@@ -3,7 +3,7 @@ import { Login } from "../pages/login/login"
 import { Dashboard } from "../pages/dashboard/dashboard"
 import PendingPortal from "../pages/placeholder-portals/pending-portal"
 import PortalPage from "../pages/portal-page/portal-page"
-import PortalEdit from "../pages/portal-page/portal-edit/portal-edit"
+import PortalEdit from "../pages/portal-edit/portal-edit"
 
 export function MyRoutes(){
     return (

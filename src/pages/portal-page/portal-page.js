@@ -7,10 +7,11 @@ import "./portal-page.css";
 
 import MyTab from "../../components/tab/tab";
 
+
 const PortalPage = () => {
   return (
     <Box sx={{ position: "absolute", top: "86px", left: "50px" }}>
-      <Grid>
+      <Grid container>
         <Navbar />
       </Grid>
       <Stack
@@ -28,9 +29,9 @@ const PortalPage = () => {
           <li>1234</li>
         </ul>
       </Stack>
-      <Stack>
+      <Grid>
         <MyTab />
-      </Stack>
+      </Grid>
     </Box>
   );
 };

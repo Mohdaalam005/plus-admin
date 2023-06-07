@@ -211,7 +211,7 @@ export function Dashboard() {
         <Grid>
           <DropdownLocation />
         </Grid>
-        <Button className="center3" variant="outlined" onClick={handleClick}>
+        <Button className="center3" variant="outlined">
           Search
         </Button>
       </Grid>

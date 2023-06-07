@@ -2,10 +2,13 @@ import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 import React from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-const InputText = ({ onRemove }) => {
-    const handleRemove = () => {
-       onRemove();
-      };
+function InputText (props) {
+  console.log("Input Text", props);
+  const { portal, removePortal } = props;
+
+  const handleRemove = () => {
+    removePortal(portal.id);
+  };
   return (
     <Box>
       <Grid marginTop={"42px"}>

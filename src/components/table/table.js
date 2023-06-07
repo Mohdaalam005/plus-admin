@@ -20,10 +20,22 @@ const columns = [
 
     renderCell: () =>
     <Grid>
-    <Button variant='outlined' sx={{marginRight : '10px'}} onClick={() => editPortal()}>
+    <Button variant='outlined' sx={{marginRight : '10px',
+    '&:hover': {
+      color: 'white',
+      backgroundColor : " green",
+  
+    }
+  }} onClick={() => editPortal()}>
         EDIT
     </Button>
-    <Button variant='outlined' onClick={() => mergePortal()}>
+    <Button variant='outlined' sx={{
+      '&:hover': {
+        color: 'white',
+        backgroundColor : " green",
+    
+      }
+    }} onClick={()  => mergePortal()}>
         MERGE
     </Button>
 

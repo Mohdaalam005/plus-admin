@@ -16,7 +16,7 @@ export default function Navbar() {
   };
   return (
     <div>
-      <Grid container display="flex" lg={12} xs={12}>
+      <Grid container display="flex">
         <AppBar sx={{ height: "70px", background: "green" }}>
           <Toolbar>
             <Grid container spacing={2}>
