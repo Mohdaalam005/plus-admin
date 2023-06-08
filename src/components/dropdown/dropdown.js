@@ -6,7 +6,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 
-import { Grid } from '@mui/material';
+import { Grid, InputLabel } from '@mui/material';
 
 export default function Dropdown() {
   const [age, setAge] = React.useState('');
@@ -148,6 +148,34 @@ export function DropdownType(){
         </Select>
       </FormControl>
       </Grid>
+  );
+}
+
+
+export function LocationDropdown(){
+  const [age, setAge] = React.useState('');
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+
+  return (
+    <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+      <InputLabel >Sate</InputLabel>
+      <Select
+      
+        value={age}
+        label="State"
+        onChange={handleChange}
+      >
+        <MenuItem value="">
+          <em></em>
+        </MenuItem>
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Select>
+    </FormControl>
   );
 }
 

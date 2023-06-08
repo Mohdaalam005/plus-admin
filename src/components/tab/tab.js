@@ -13,7 +13,7 @@ const MyTab = () => {
   const navigation = useNavigate();
 
   const handleClick = () => {
-    navigation("/portal-edit");
+    navigation("/portal-edit/1234");
   };
 
 

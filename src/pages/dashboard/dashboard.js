@@ -13,6 +13,13 @@ export function Dashboard() {
   const handleClick = () => {
     navigation("/portal-page");
   };
+  const EditPage = () => {
+    navigation("/portal-edit");
+  };
+  const addLocation = () => {
+    navigation("/portal/location");
+  };
+
   return (
     <Grid container alignContent="center" justifyContent="center">
       <Grid item lg={12}>
@@ -159,7 +166,9 @@ export function Dashboard() {
           </Button>
           <Button variant="outlined" sx={{
             width : "150px"
-          }} >+ Add Portal</Button>
+          }}
+          onClick={EditPage}
+           >+ Add Portal</Button>
         </Stack>
 
       </Grid>
@@ -221,7 +230,9 @@ export function Dashboard() {
           <Button className="center3" variant="outlined">
             Search
           </Button>
-          <Button variant="outlined" className="center4" >+ Add Location</Button>
+          <Button
+          onClick={addLocation}
+           variant="outlined" className="center4" >+ Add Location</Button>
         </Stack>
       </Grid>
     </Grid>
