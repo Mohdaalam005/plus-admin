@@ -49,11 +49,16 @@
     top: 12px;
   }
   .center2 {
-    right: 203px;
+    width: 100px;
     top: 12px;
   }
+
   .center3 {
-      right: 203px;
+      width: 100px;
+      bottom: 27px;
+  }
+  .center4 {
+      width: 160px;
       bottom: 27px;
   }
   

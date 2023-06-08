@@ -153,9 +153,15 @@ export function Dashboard() {
           <Dropdown />
           <DropdownStatus />
         </Grid>
-        <Button className="center2" variant="outlined">
-          Search
-        </Button>
+        <Stack direction={"column"}spacing={3}>
+          <Button className="center2" variant="outlined">
+            Search
+          </Button>
+          <Button variant="outlined" sx={{
+            width : "150px"
+          }} >+ Add Portal</Button>
+        </Stack>
+
       </Grid>
       <Grid
         item
@@ -211,9 +217,12 @@ export function Dashboard() {
         <Grid>
           <DropdownLocation />
         </Grid>
-        <Button className="center3" variant="outlined">
-          Search
-        </Button>
+        <Stack direction={"column"}spacing={2}>
+          <Button className="center3" variant="outlined">
+            Search
+          </Button>
+          <Button variant="outlined" className="center4" >+ Add Location</Button>
+        </Stack>
       </Grid>
     </Grid>
   );
